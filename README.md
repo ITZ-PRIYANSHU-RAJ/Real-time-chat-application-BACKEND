@@ -109,7 +109,7 @@ http://localhost:5000
 Frontend code is available here:
 
 ```
-https://github.com/YOUR-USERNAME/chat-app-frontend
+https://github.com/ITZ-PRIYANSHU-RAJ/real-time-chat-application---FRONTEND
 ```
 
 ---
