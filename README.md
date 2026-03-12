@@ -1,4 +1,4 @@
-# Real-Time Chat Application
+# Real-Time Chat Application --backend
 
 ## 📌 Project Overview
 
