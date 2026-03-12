@@ -1,136 +1,122 @@
-# Real-Time Chat Application --backend
+# Real-Time Chat Application – Backend
 
-## 📌 Project Overview
+## 📌 Overview
 
-This project is a **Real-Time Chat Application** built using the **MERN Stack (MongoDB, Express.js, React.js, Node.js)**.
-It allows users to communicate instantly through a modern web interface with real-time messaging capabilities.
+This repository contains the **backend server** for the Real-Time Chat Application.
 
-The application demonstrates full-stack development including frontend UI, backend APIs, database integration, and real-time communication.
+It handles:
+
+* User authentication
+* Message storage
+* Real-time communication
+* Database operations
+
+The backend exposes REST APIs and uses WebSockets for real-time messaging.
 
 ---
 
 ## 🚀 Features
 
-* 🔐 User authentication (login/signup)
-* 💬 Real-time messaging
-* 👥 One-to-one chat system
-* 📡 Instant message updates using WebSockets / Socket.io
-* 📱 Responsive user interface
-* 🗄️ MongoDB database for storing users and messages
-* ⚡ Fast frontend built with React
-* 🔒 Secure backend using Express and Node.js
+* User registration and login
+* REST API for chat operations
+* Real-time messaging using Socket.io
+* MongoDB database integration
+* Secure server using Express.js
 
 ---
 
 ## 🛠️ Tech Stack
 
-### Frontend
-
-* React.js
-* HTML5
-* CSS3
-* JavaScript
-
-### Backend
-
 * Node.js
 * Express.js
-
-### Database
-
-* MongoDB (MongoDB Atlas)
-
-### Real-Time Communication
-
+* MongoDB
+* Mongoose
 * Socket.io
+* JWT Authentication
 
 ---
 
 ## 📂 Project Structure
 
 ```
-Real-time-chat-application
+server
 │
-├── client
-│   ├── src
-│   ├── public
-│   └── package.json
+├── models
+│   ├── User.js
+│   └── Message.js
 │
-├── server
-│   ├── models
-│   ├── routes
-│   ├── controllers
-│   └── server.js
+├── routes
+│   ├── authRoutes.js
+│   └── messageRoutes.js
 │
-└── README.md
+├── controllers
+│
+├── config
+│
+└── server.js
 ```
 
 ---
 
-## ⚙️ Installation & Setup
+## ⚙️ Installation
 
-### 1️⃣ Clone the repository
-
-```
-git clone https://github.com/ITZ-PRIYANSHU-RAJ/Real-time-chat-application.git
-```
-
-### 2️⃣ Navigate to the project
+### Clone the repository
 
 ```
-cd Real-time-chat-application
+git clone https://github.com/ITZ-PRIYANSHU-RAJ/real-time-chat-application-BACKEND
 ```
 
-### 3️⃣ Install backend dependencies
+### Navigate to project folder
 
 ```
-cd server
+cd chat-app-backend
+```
+
+### Install dependencies
+
+```
 npm install
 ```
 
-### 4️⃣ Install frontend dependencies
+### Create environment file
+
+Create `.env` file:
 
 ```
-cd ../client
-npm install
-```
-
-### 5️⃣ Start the backend server
-
-```
-cd server
-npm start
-```
-
-### 6️⃣ Start the frontend
-
-```
-cd client
-npm start
+PORT=5000
+MONGO_URI=your_mongodb_connection_string
+JWT_SECRET=your_secret_key
 ```
 
 ---
 
-## 📸 Future Improvements
+### Start the server
 
-* Group chat feature
-* File and image sharing
-* Online/offline user status
-* Message notifications
-* Emoji support
-* Message read receipts
+```
+npm start
+```
+
+The backend server will run on:
+
+```
+http://localhost:5000
+```
 
 ---
 
-## 🎯 Purpose of This Project
+## 🔗 Frontend Repository
 
-This project was built to practice **full-stack development using the MERN stack** and understand **real-time communication between users using WebSockets**.
+Frontend code is available here:
+
+```
+https://github.com/YOUR-USERNAME/chat-app-frontend
+```
 
 ---
 
 ## 👨‍💻 Author
 
-**Priyanshu Raj**
+Priyanshu Raj
 
 GitHub:
 https://github.com/ITZ-PRIYANSHU-RAJ
