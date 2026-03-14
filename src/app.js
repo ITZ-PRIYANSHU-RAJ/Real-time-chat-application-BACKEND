@@ -7,12 +7,24 @@ import userRoutes from "./routes/userRoutes.js";
 import chatRoutes from "./routes/chatRoutes.js";
 import messageRoutes from "./routes/messageRoutes.js";
 
+const parseAllowedOrigins = () =>
+  (process.env.CLIENT_URL || "")
+    .split(",")
+    .map((origin) => origin.trim())
+    .filter(Boolean);
+
 export const createApp = () => {
   const app = express();
+  const allowedOrigins = parseAllowedOrigins();
 
   app.use(
     cors({
-      origin: process.env.CLIENT_URL,
+      origin: (origin, callback) => {
+        if (!origin) return callback(null, true);
+        if (allowedOrigins.length === 0) return callback(null, true);
+        if (allowedOrigins.includes(origin)) return callback(null, true);
+        return callback(new Error(`CORS blocked for origin: ${origin}`));
+      },
       credentials: true,
     })
   );
