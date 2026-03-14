@@ -1,5 +1,6 @@
 import "dotenv/config";
 import http from "http";
+import cors from "cors";
 import { Server } from "socket.io";
 import { connectDb } from "./config/db.js";
 import { createApp } from "./app.js";
@@ -12,7 +13,14 @@ const missing = requiredEnv.filter((key) => !process.env[key]);
 if (missing.length > 0) {
   console.error(`Missing required environment variables: ${missing.join(", ")}`);
   process.exit(1);
+
 }
+app.use(
+  cors({
+    origin: "https://real-time-chat-application-frontend-omega.vercel.app",
+    credentials: true
+  })
+);
 
 const app = createApp();
 const server = http.createServer(app);
